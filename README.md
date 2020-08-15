@@ -41,4 +41,4 @@ for(let m=0;m<12;m++){
 ```javascript
 console.log(new Date(2020,0,getLunarCalendar(2020).flat().indexOf(101)+1));
 ```  
-依上例類堆則求端午帶入505，求中秋帶入815。
+依上例類堆，求端午帶入505、求中秋帶入815。
