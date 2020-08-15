@@ -26,8 +26,7 @@ let Y = getLunarCalendar(2020);
 
 ## 範例
 
-列出一整年農曆對照表
-
+- 列出一整年農曆對照表  
 ```javascript
 let y = 2020, Y = getLunarCalendar(y);
 
@@ -38,3 +37,8 @@ for(let m=0;m<12;m++){
   }
 }
 ```
+- 取得農曆春節的西曆日期  
+```javascript
+console.log(new Date(2020,0,getLunarCalendar(2020).flat().indexOf(101)+1));
+```  
+依上例類堆則求端午帶入505，求中秋帶入815。
