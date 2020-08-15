@@ -37,7 +37,7 @@ for(let m=0;m<12;m++){
   }
 }
 ```
-- 取得農曆春節的西曆日期  
+- 取得某年農曆春節的西元日期  
 ```javascript
 console.log(new Date(2020,0,getLunarCalendar(2020).flat().indexOf(101)+1));
 ```  
