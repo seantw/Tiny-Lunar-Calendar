@@ -1,2 +1,40 @@
-# Tiny-Lunar-Calendar
-JavaScript function for calculating the lunar calendar. The size is only 1KB, 1 function.
+# 超迷你 JavaScript 農曆函式
+
+這個函式可以取得 2001-2099 年所有農曆日期。以最緊湊的方式儲存農曆表，使得程式碼約佔1KB大小。
+
+## 使用方式
+
+```javascript
+let Y = getLunarCalendar(2020);
+```
+上例 Y 得一個二維陣列，存放2020年每一天農曆日期。第一維為陽曆的月，第二維為陽曆的日。每個數字表示農曆月日，個、十位數為農曆日，百位數為農曆月，若為負值表示農曆閏月。  
+看起來像這樣子：
+
+```
+[
+  [1207, 1208, 1209, …],
+  [108, 109, 110, …],
+  [208, 209, 210, …],
+  [309, 310, 311, …],
+  [409, 410, 411, …],
+  [-410, -411, -412, …],
+  [511, 512, 513, …],
+  …
+  [1017, 1018, 1019, …]  
+]
+```
+
+## 範例
+
+列出一整年農曆對照表
+
+```javascript
+let y = 2020, Y = getLunarCalendar(y);
+
+for(let m=0;m<12;m++){
+  for(let d=0;d<Y[m].length;d++){
+    let D = Y[m][d];
+    console.log(`${y}/${m+1}/${d+1} 農曆${D<0?'閏':''}${Math.floor(Math.abs(D/100))}月${Math.abs(D)%100}日`);
+  }
+}
+```
