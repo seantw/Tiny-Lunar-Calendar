@@ -1,9 +1,4 @@
-
-/*
-  傳入：西元年份
-  回傳：西元全年每一天的農曆日期二維陣列。二維陣列為月份、農曆日，負值為閏月。
-*/
-
+// 傳入：西元年份。回傳：該年每一天的農曆日期二維陣列。二維陣列為 [西元月份][農曆月日]，負值為農曆閏月。
 function getLunarCalendar(targetYear){
 
   'use strict';
@@ -65,4 +60,11 @@ function getLunarCalendar(targetYear){
     }
   }
   return(aCalendar);
+}
+
+// 傳入：西元年份。回傳：該年清明節為4月的幾日。
+function getQingMing(targetYear) {
+  const tropicalYear = 31556925252; //平均回歸年
+  const baseQingMing = 954847918750; // 2000年清明日期
+  return (new Date(baseQingMing+(targetYear-2000)*tropicalYear)).getDate();
 }
